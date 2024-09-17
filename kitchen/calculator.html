@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор стоимости кухни</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .calculator {
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (min-width: 800px) and (max-width: 1100px) {
+      .navbar-nav {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .navbar-brand {
+        font-size: 14px;
+      }
+      .col-md-6 {
+
+      }
+    }
+
+    .calculator h2 {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .calculator .form-group {
+      margin-bottom: 15px;
+    }
+
+    .calculator .form-control {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .footer {
+      background-color: #333; /* Темно-серый фон футера */
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .calculator .btn {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .calculator .result {
+      margin-top: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    /* Стили для галереи */
+    .gallery {
+      margin-bottom: 20px;
+    }
+
+    .gallery .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery .col-md-4 { /* Ширина каждой колонки 25% */
+      width: 16.66%; /* 100% / 6 = 16.66% */
+      margin-bottom: 10px;
+    }
+
+    .gallery img {
+      width: 350px; /* Например, 200 пикселей */
+      height: 200px; /*  Например, 150 пикселей */
+      display: block;
+      margin: 0 auto;
+      object-fit: cover; /*  Или object-fit: contain, если нужно */
+      border-radius: 40px;
+      cursor: pointer;
+    }
+
+    .gallery img.active {
+      border: 3px solid #b10b0b;
+    }
+
+    .gallery .caption {
+      text-align: center;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .parallax-content h1 {
+        font-size: 2em;
+      }
+
+      .parallax-content p {
+        font-size: 1em;
+      }
+
+      .services .card-img-top {
+        height: 150px;
+      }
+
+      .gallery .col-md-3, .gallery .col-md-4 {
+        width: 100%;
+      }
+
+      .gallery .row {
+        flex-direction: column;
+      }
+
+      .caption {
+        width: 100%;
+      }
+    }
+
+
+  </style>
+</head>
+<body class="bg-dark text-light">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-info" style="margin-bottom: 30px;">
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-tools"></i> Мы делаем Кухни и шкафы-купе
+    </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html"><i class="fas fa-book"></i> Портфолио</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Калькулятор стоимости</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tel:+79207020081"><i class="fas fa-phone"></i> +7 (920)-702-00-81</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://wa.me/+79207020081"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://t.me/@XarlamS"><i class="fab fa-telegram"></i> Telegram</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="calculator">
+    <div class="container">
+      <h2 class="text-light">Калькулятор стоимости кухни</h2>
+
+      <div class="form-group">
+        <h3 class="text-light">Материал фасадов:</h3>
+        <div class="gallery mt-5">
+          <div class="row">
+            <div class="col-md-6 mb-5">
+              <img src="images/ldsp.jpeg" class="img-fluid figure-img" data-material="material1" data-price="1500">
+              <div class="carousel-caption">
+                <h5 class="text-white">ЛДСП</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/kantri.jpg" class="img-fluid" data-material="material2" data-price="2500">
+              <div class="caption">Кантри</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/patina.jpg" class="img-fluid" data-material="material3" data-price="3000">
+              <div class="caption">Патина</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/shpon.jpg" class="img-fluid" data-material="material4" data-price="4000">
+              <div class="caption">Шпон</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/plastik.jpg" class="img-fluid" data-material="material5" data-price="1800">
+              <div class="caption">Пластик</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/mdf.jpg" class="img-fluid" data-material="material6" data-price="2200">
+              <div class="caption">МДФ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mt-5">
+        <h3 class="text-light">Стиль кухни:</h3>
+        <div class="gallery text-light mt-5">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="images/p-obraznaya.jpg" class="img-fluid" data-style="style1" data-price="1.2">
+              <div class="caption">П-образная</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/pryamaya.jpg" class="img-fluid" data-style="style2" data-price="1.0">
+              <div class="caption">Прямая</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/s-ostrovom.jpg" class="img-fluid" data-style="style3" data-price="1.4">
+              <div class="caption">С островом</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/uglovaya.jpg" class="img-fluid" data-style="style4" data-price="1.1">
+              <div class="caption">Угловая</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mt-5">
+        <h3 class="text-light">Материал столешницы:</h3>
+        <div class="gallery mt-5">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="images/basic.jpg" class="img-fluid" alt="Материал 1" data-countertop="countertop1" data-price="2000">
+              <div class="caption">Базовая</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/derevo.jpeg" class="img-fluid" alt="Материал 2" data-countertop="countertop2" data-price="3500">
+              <div class="caption">Деревянная</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/kamennnaya.jpeg" class="img-fluid" alt="Материал 3" data-countertop="countertop3" data-price="4500">
+              <div class="caption">Каменная</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/scaled.jpg" class="img-fluid" alt="Материал 4" data-countertop="countertop4" data-price="2500">
+              <div class="caption">Скалэнированная</div>
+            </div>
+            <div class="col-md-6">
+              <img src="images/panel.jpeg" class="img-fluid" alt="Материал 5" data-countertop="countertop5" data-price="1800">
+              <div class="caption">Панельная</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="length" class="text-light">Длина кухни (в метрах):</label>
+        <input type="number" class="form-control bg-dark text-light" id="length" placeholder="Введите длину">
+      </div>
+
+      <div class="form-group">
+        <label for="width" class="text-light">Ширина кухни (в метрах):</label>
+        <input type="number" class="form-control bg-dark text-light" id="width" placeholder="Введите ширину">
+      </div>
+
+      <button class="btn btn-success" onclick="calculatePrice()">Рассчитать стоимость</button>
+
+      <div class="result">
+        <p id="price" class="text-light">Стоимость кухни: </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculatePrice() {
+      const length = parseFloat(document.getElementById('length').value);
+      const width = parseFloat(document.getElementById('width').value);
+      let price = 0;
+
+      const selectedMaterial = document.querySelector('.gallery img.active[data-material]');
+      const selectedStyle = document.querySelector('.gallery img.active[data-style]');
+      const selectedCountertop = document.querySelector('.gallery img.active[data-countertop]');
+
+      if (selectedMaterial && selectedStyle && selectedCountertop) {
+        price = parseFloat(selectedMaterial.dataset.price);
+        price *= parseFloat(selectedStyle.dataset.price); // Умножаем цену материала на цену стиля
+        price += parseFloat(selectedCountertop.dataset.price); // Добавляем цену столешницы
+
+        const area = length * width;
+        price += area * 1000; // Добавляем стоимость за площадь кухни
+
+      } else {
+        alert('Выберите материал фасадов, стиль кухни и материал столешницы.');
+        return;
+      }
+
+      document.getElementById('price').textContent = 'Стоимость кухни: ' + price.toFixed(2) + ' руб.';
+    }
+
+    // Логика для галерей (стили, материалы, столешницы)
+    const galleries = document.querySelectorAll('.gallery');
+    galleries.forEach(gallery => {
+      const images = gallery.querySelectorAll('img');
+      images.forEach(image => {
+        image.addEventListener('click', () => {
+          images.forEach(img => img.classList.remove('active'));
+          image.classList.add('active');
+        });
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Ремонт Кухни</p>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

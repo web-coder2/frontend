@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мы делаем Кухни</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa; /* Светло-серый фон */
+    }
+
+    @media (min-width: 800px) and (max-width: 1100px) {
+      .navbar-nav {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .navbar-brand {
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .card-body {
+        min-height: 190px;
+      }
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .jumbotron {
+      background-color: #f0f0f0; /* Светло-серый фон заголовка */
+      color: #333; /* Темно-серый текст */
+    }
+
+    .carousel-item img {
+      transition: transform 0.5s ease-in-out; /* Плавный переход при смене слайдов */
+      border-radius: 40px;
+    }
+
+    .carousel-item.active img {
+      transform: scale(1.1); /* Увеличение активного слайда */
+    }
+
+    .col-md-4 {
+      margin-top: 15px;
+    }
+
+    .row {
+      margin-left: 5%;
+    }
+
+    .footer {
+      background-color: #333; /* Темно-серый фон футера */
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #fff; /* Белый цвет ссылок */
+    }
+
+    .footer a:hover {
+      text-decoration: none;
+    }
+
+    /* Эффект параллакса */
+    .parallax {
+      background-image: url("images/main.jpg");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      min-height: 400px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .parallax-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+
+    .parallax-content h1 {
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    .parallax-content p {
+      font-size: 1.5em;
+    }
+
+    @media(max-width: 768px) {
+      .carousel-item {
+        margin-bottom: 10px;
+      }
+
+      .d-block {
+        margin-bottom: 20px; 
+      }
+    }
+
+  </style>
+</head>
+<body class="bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-tools"></i> Мы делаем Кухни и шкафы-купе
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html"><i class="fas fa-book"></i> Портфолио</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Калькулятор стоимости</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tel:+79207020081"><i class="fas fa-phone"></i> +7 (920)-702-00-81</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://wa.me/+79207020081"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://t.me/@XarlamS"><i class="fab fa-telegram"></i> Telegram</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="parallax mt-5">
+    <div class="parallax-content">
+      <h1>Мы делаем кухни</h1>
+      <p>Превратите свою мечту в реальность!</p>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4 text-light">Примеры наших работ:</h2>
+    
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <a href="gallery/gallery1.html" class="d-block">
+            <img src="portfolio/dir1.jpg" class="img-fluid" style="border-radius: 40px;">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <a href="gallery/gallery2.html" class="d-block">
+            <img src="portfolio/dir2.jpg" class="img-fluid" style="border-radius: 40px;">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <a href="gallery/gallery3.html" class="d-block">
+            <img src="portfolio/dir3.jpg" class="img-fluid" style="border-radius: 40px;">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <a href="gallery/gallery4.html" class="d-block">
+            <img src="portfolio/dir4.jpg" class="img-fluid" style="border-radius: 40px;">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <a href="gallery/gallery5.html" class="d-block">
+            <img src="portfolio/dir5.jpg" class="img-fluid" style="border-radius: 40px;">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <a href="gallery/gallery6.html" class="d-block">
+            <img src="portfolio/dir6.jpg" class="img-fluid" style="border-radius: 40px;">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Кухни, Шкафы-купе</p>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
