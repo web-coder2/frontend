@@ -1,0 +1,55 @@
+body {
+	background-color: rgb(33, 47, 50);
+}
+
+.header, .header-list {
+	display: flex;
+	align-items: center;
+}
+
+.header-item a {
+	color: green;
+	margin-left: 80px;
+	font-size: 20px;
+	font-family: sans-serif;
+	text-decoration: none;
+}
+
+.main {
+	background-image: url("images/hero-bg.jpg");
+	background-size: cover;
+	margin-left: -7px; 
+	margin-right: -7px;
+	height: 500px;
+	position: absolute;
+}
+
+.main-title {
+	color: white;
+	margin-left: 10%;
+	margin-top: 10%;
+	font-size: 40px;
+	width: 40%;
+	font-family: sans-serif;
+}
+
+.main-text {
+	color: white;
+	margin-left: 10%;
+	width: 40%;
+	font-family: serif;
+	font-size: 20px;
+}
+
+.main-search {
+	color: yellowgreen;
+	margin-left: 10%;
+	font-size: 20px;
+}
+
+.arrow {
+	width: 40px;
+	height: 30px;
+	align-items: center;
+	margin-left: 2%;
+}
