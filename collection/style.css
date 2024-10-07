@@ -53,3 +53,43 @@ body {
 	align-items: center;
 	margin-left: 2%;
 }
+
+.sectionCards {
+	margin-top: 550px;
+	margin-left: 13%;
+	width: 80%;
+	display: flex;
+}
+
+.card {
+	width: 20%;
+	border: 2px solid black;
+	margin-right: 50px;
+	height: 400px;
+}
+
+.card-img {
+	width: 100%;
+	height: 40%;
+}
+
+.card-title {
+	color: #878576;
+	font-family: sans-serif;
+	margin-left: 15px; 
+}
+
+.card-text {
+	color: white;
+	font-family: sans-serif;
+	margin-left: 15px;
+}
+
+.card-btn {
+	color: yellowgreen;
+	margin-left: 15px;
+	border: 3px solid black;
+	width: 50%;
+	border-radius: 40px;
+	background-color: rgb(33, 47, 50);
+}
