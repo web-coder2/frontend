@@ -33,6 +33,17 @@
       text-decoration: none;
     }
 
+    .modal-dialog {
+      max-width: 65%; /* Ширина модального окна 80% */
+      margin: 1.75rem auto; /* Отступ по бокам и сверху */
+    }
+
+    .modal-content {
+      border: 3px solid black; /* Черная рамка */
+      background-color: black;
+      border-radius: 20px;
+    }
+
 </style>
 
 <body class="bg-dark">
@@ -64,31 +75,38 @@
     </div>
   </nav>
 
-  <div class="container mt-5">
-    <h2 class="text-center mb-5 text-light">Фотогалерея №1</h2>
-    
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-           <img src="../site-photos/10.jpg" class="img-fluid" style="border-radius: 40px;">
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-           <img src="../site-photos/11.jpg" class="img-fluid" style="border-radius: 40px;">
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-           <img src="../site-photos/12.jpg" class="img-fluid" style="border-radius: 40px;">
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-           <img src="../site-photos/13.jpg" class="img-fluid" style="border-radius: 40px;">
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-           <img src="../site-photos/14.jpg" class="img-fluid" style="border-radius: 40px;">
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-           <img src="../site-photos/15.jpg" class="img-fluid" style="border-radius: 40px;">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <img src="../site-photos/10.jpg" class="img-fluid" style="border-radius: 40px;" data-modal-image="../site-photos/10.jpg">
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <img src="../site-photos/11.jpg" class="img-fluid" style="border-radius: 40px;" data-modal-image="../site-photos/11.jpg">
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <img src="../site-photos/12.jpg" class="img-fluid" style="border-radius: 40px;" data-modal-image="../site-photos/12.jpg">
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <img src="../site-photos/13.jpg" class="img-fluid" style="border-radius: 40px;" data-modal-image="../site-photos/13.jpg">
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <img src="../site-photos/14.jpg" class="img-fluid" style="border-radius: 40px;" data-modal-image="../site-photos/14.jpg">
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <img src="../site-photos/15.jpg" class="img-fluid" style="border-radius: 40px;" data-modal-image="../site-photos/15.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img id="modalImage" class="img-fluid w-100" alt="Описание изображения">
         </div>
       </div>
     </div>
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -103,3 +121,25 @@
   <script src="app.js"></script>
 </body>
 </html>
+
+<script>
+
+  // Получение всех изображений
+  const images = document.querySelectorAll('img');
+
+  // Добавление обработчика клика для каждого изображения
+
+  images.forEach(image => {
+
+    image.addEventListener('click', function() {
+    // Получение пути к изображению из атрибута data-modal-image
+    const modalImageSrc = this.getAttribute('data-modal-image');
+    // Установка пути к изображению в модальном окне
+    document.getElementById('modalImage').src = modalImageSrc;
+    // Открытие модального окна
+    const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+    imageModal.show();
+  });
+});
+
+</script>
