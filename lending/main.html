@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>kitchen-master</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: black;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand text-light" href="#">master</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> 
+      <div class="navbar-nav">
+        <a class="nav-item nav-link text-light" href="#catalog">Каталог</a>
+        <a class="nav-item nav-link text-light" href="#gallery">Галерея</a>
+        <a class="nav-item nav-link text-light" href="#">О компании</a>
+        <a class="nav-item nav-link text-light" href="#">Контакты</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid" style="background-image: url('media/mdf.jpg'); height: 70vh; background-size: cover; background-repeat: no-repeat;" id="catalog">
+    <div class="justify-content-start align-items-center h-100" style="width: 60%;">
+      <h1 class="text-light">company</h1>
+      <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing 
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+      minim veniam, quis nostrud exercitation ullamco laboris</p>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="d-flex justify-content-end mb-3">
+          <select id="carouselSelect" class="form-control bg-dark text-light">
+            <option value="1">фотогалерея 1</option>
+            <option value="2">фотогалерея 2</option>
+            <option value="3">фотогалерея 3</option>
+            <option value="4">фотогалерея 4</option>
+          </select>
+        </div>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" id="gallery">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <!-- для десктопа  -->
+      <div class="col-md-6 offset-md-1">
+        <div class="animated-block p-3 rounded" style="height: 400px;"> 
+          <button class="animated-button" data-toggle="modal" data-target="#costModal">Расчитать стоимость</button>
+        </div>
+      </div>
+      <!-- для мобилы -->
+      <div class="col-md-12 d-md-none mt-3">
+        <div class="animated-block p-3 rounded">
+          <button class="animated-button">Расчитать стоимость</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно -->
+  <div class="modal fade" id="costModal" tabindex="-1" role="dialog" aria-labelledby="costModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="costModalLabel">Расчет стоимости</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <div class="d-flex justify-content-center">
+                <div class="modal-select-image" data-image-path="select/1.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/2.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/3.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/4.jpg"></div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+              <div class="d-flex justify-content-center">
+                <div class="modal-select-image" data-image-path="select/5.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/6.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/7.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/8.jpg"></div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+              <div class="d-flex justify-content-center">
+                <div class="modal-select-image" data-image-path="select/9.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/10.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/11.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/12.jpg"></div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+              <div class="d-flex justify-content-center">
+                <div class="modal-select-image" data-image-path="select/13.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/14.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/15.jpg"></div>
+                <div class="modal-select-image" data-image-path="select/16.jpg"></div>
+              </div>
+            </div>
+          </div>
+           </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="button" class="btn btn-primary">Рассчитать</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+</html>
+
+<style>
+
+   .animated-block {
+      background-color: #800080; /* Фиолетовый цвет */
+      animation: stripes 5s linear infinite;
+    }
+
+    .animated-button {
+      background-color: #ff0000; /* Красный цвет */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      animation: stripes 5s linear infinite;
+    }
+
+    @keyframes stripes {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 50px 0;
+      }
+    }
+
+    .modal-select-image {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal-select-image.selected {
+      border: 2px solid #007bff; /* Голубой цвет рамки при выборе */
+    }
+
+</style>
+
+<script>
+    $(document).ready(function() {
+      // Рендерим первую карусель при загрузке
+      renderCarousel(1); // 1 - выбранное значение по умолчанию
+
+      $("#carouselSelect").change(function() {
+        var selectedValue = $(this).val();
+        renderCarousel(selectedValue);
+      });
+
+      function renderCarousel(value) {
+        var carouselInner = $(".carousel-inner");
+        carouselInner.empty(); // Очищаем существующие слайды
+
+        var imagePrefix = value + "";
+
+        // Генерируем слайды
+        for (var i = 1; i <= 3; i++) {
+          var imagePath = "media/" + imagePrefix + i + ".jpg";
+          var isActive = (i == 1) ? "active" : ""; // Первый слайд активный
+
+          var slideHTML = '<div class="carousel-item ' + isActive + '">' +
+            '<img src="' + imagePath + '" class="d-block w-100" alt="Slide ' + i + '">' +
+            '</div>';
+
+          carouselInner.append(slideHTML);
+        }
+      }
+
+      // Инициализируем карусель (нужно сделать после добавления слайдов)
+      $('#carouselExampleIndicators').carousel();
+
+      // Модальное окно: выбор изображений
+      $('.modal-select-image').click(function() {
+        $(this).toggleClass('selected');
+      });
+    });
+  </script>
