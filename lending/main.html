@@ -94,26 +94,39 @@
   </div>
 
   <footer id="contacts">
-    <div class="container-fluid">
-      <div class="row footer-content">
-        <div class="col-md-6 footer-contact"> 
-          <h3>Контакты</h3>
-          <p>Телефон: +7 (123) 456-78-90</p>
-          <p>Email: info@example.com</p>
-          <p>Адрес: г. Москва, ул. Ленина, д. 1</p>
+  <div class="container-fluid">
+    <div class="row footer-content">
+      <div class="col-md-3 footer-contact"> 
+        <h3>Контакты мастера</h3>
+        <p>Телефон: +7 (123) 456-78-90</p>
+        <p>Email: info@example.com</p>
+        <p>Адрес: г. Курск, ул. Ленина, д. 1</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-vk"></i></a>  <!-- Иконка ВКонтакте -->
+          <a href="#"><i class="fab fa-odnoklassniki"></i></a> <!-- Иконка Одноклассники -->
+          <a href="#"><i class="fab fa-telegram"></i></a> <!-- Иконка Telegram -->
         </div>
-        <div class="col-md-6 footer-social">
+      </div>
+      <div class="col-md-9 col-sm-12 footer-contact mt-5 mt-md-0"> <!-- Используем mt-4 для мобильного и mt-md-0 для десктопа -->
+        <h3>Контакты разработчика</h3>
+        <p>Телефон: +7 (123) 456-78-90</p>
+        <p>Email: info@example.com</p>
+        <p>Адрес: г. Курск, ул. Ленина, д. 1</p>
+        <div class="footer-social">
           <a href="#"><i class="fab fa-vk"></i></a>  <!-- Иконка ВКонтакте -->
           <a href="#"><i class="fab fa-odnoklassniki"></i></a> <!-- Иконка Одноклассники -->
           <a href="#"><i class="fab fa-telegram"></i></a> <!-- Иконка Telegram -->
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
+
 
 
 <!-- Модальное окно -->
-  <div class="modal fade" id="costModal" tabindex="-1" role="dialog" aria-labelledby="costModalLabel" aria-hidden="true">
+<div class="modal fade" id="costModal" tabindex="-1" role="dialog" aria-labelledby="costModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -125,76 +138,67 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-md-12 mb-3">
-              <h4 class="d-flex justify-content-center">выбрать тип кухни</h4>
-              <div class="d-flex justify-content-center">
-                <div class="modal-select-image">
+              <h4 class="d-flex justify-content-center">Выбрать тип кухни</h4>
+              <div class="d-flex justify-content-center" id="kitchenType">
+                <div class="modal-select-image" data-cost="1000">
                   <img src="select/1.jpg" alt="Изображение 1">
                 </div>
-                 <div class="modal-select-image">
+                 <div class="modal-select-image" data-cost="1500">
                   <img src="select/2.jpg" alt="Изображение 2">
                 </div>
-                <div class="modal-select-image">
+                <div class="modal-select-image" data-cost="2000">
                   <img src="select/3.jpg" alt="Изображение 3">
                 </div>
-                <div class="modal-select-image">
+                <div class="modal-select-image" data-cost="2500">
                   <img src="select/4.jpg" alt="Изображение 4">
                 </div>
               </div>
             </div>
             <div class="col-md-12 mb-3">
-              <h4 class="d-flex justify-content-center">выбрать материал кухни</h4>
-              <div class="d-flex justify-content-center">
-                <div class="modal-select-image">
-                  <img src="media/5.jpg" alt="Изображение 5">
+              <h4 class="d-flex justify-content-center">Выбрать материал столешницы</h4>
+              <div class="d-flex justify-content-center" id="countertopMaterial">
+                <div class="modal-select-image" data-cost="500">
+                  <img src="select/21.jpg" alt="Изображение 5">
                 </div>
-                <div class="modal-select-image">
-                  <img src="media/6.jpg" alt="Изображение 6">
+                <div class="modal-select-image" data-cost="750">
+                  <img src="select/22.jpeg" alt="Изображение 6">
                 </div>
-                <div class="modal-select-image">
-                  <img src="media/7.jpg" alt="Изображение 7">
+                <div class="modal-select-image" data-cost="1000">
+                  <img src="select/23.jpg" alt="Изображение 7">
                 </div>
-                <div class="modal-select-image">
-                  <img src="media/8.jpg" alt="Изображение 8">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12 mb-3">
-              <div class="d-flex justify-content-center">
-                <div class="modal-select-image">
-                  <img src="media/9.jpg" alt="Изображение 9">
-                </div>
-                <div class="modal-select-image">
-                  <img src="media/10.jpg" alt="Изображение 10">
-                  </div>
-                <div class="modal-select-image">
-                  <img src="media/11.jpg" alt="Изображение 11">
-                </div>
-                <div class="modal-select-image">
-                  <img src="media/12.jpg" alt="Изображение 12">
+                <div class="modal-select-image" data-cost="1250">
+                  <img src="select/24.jpeg" alt="Изображение 8">
                 </div>
               </div>
             </div>
             <div class="col-md-12 mb-3">
-              <div class="d-flex justify-content-center">
-                <div class="modal-select-image">
-                  <img src="media/13.jpg" alt="Изображение 13">
+              <h4 class="d-flex justify-content-center">Выбрать материал кухни</h4>
+              <div class="d-flex justify-content-center" id="kitchenMaterial">
+                <div class="modal-select-image" data-cost="1000">
+                  <img src="select/31.jpg" alt="Изображение 5">
                 </div>
-                <div class="modal-select-image">
-                  <img src="media/14.jpg" alt="Изображение 14">
+                <div class="modal-select-image" data-cost="1500">
+                  <img src="select/32.jpeg" alt="Изображение 6">
                 </div>
-                <div class="modal-select-image">
-                  <img src="media/15.jpg" alt="Изображение 15">
+                <div class="modal-select-image" data-cost="2000">
+                  <img src="select/33.jpg" alt="Изображение 7">
                 </div>
-                <div class="modal-select-image">
-                  <img src="media/16.jpg" alt="Изображение 16">
+                <div class="modal-select-image" data-cost="2500">
+                  <img src="select/34.jpg" alt="Изображение 8">
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12 mb-3">
+              <h4 class="d-flex justify-content-center">Итоговая стоимость:</h4>
+              <h3 class="d-flex justify-content-center" id="totalCost">0</h3>
             </div>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-          <button type="button" class="btn btn-primary">Рассчитать</button>
+          <button type="button" class="btn btn-primary" id="calculateCost">Рассчитать</button>
         </div>
       </div>
     </div>
@@ -222,13 +226,14 @@
 
     .modal-select-image img {
       width: auto;
-      height: auto;
+      height: 100px;
       max-width: 100%;
       max-height: 100%;
       position: absolute;
       top: 0;
       left: 0;
     }
+
     body {
       font-family: 'Arial', sans-serif;
     }
@@ -311,14 +316,76 @@ $(document).ready(function() {
 
       // Инициализируем карусель (нужно сделать после добавления слайдов)
       $('#carouselExampleIndicators').carousel();
+    });
 
-      // Модальное окно: выбор изображений
-      $('.modal-select-image').click(function() {
-        // Удаляем класс selected у всех элементов
-        $('.modal-select-image').removeClass('selected');
-        
-        // Добавляем класс selected к текущему элементу
-        $(this).addClass('selected');
-      });
-    });    
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const kitchenType = document.getElementById('kitchenType');
+      const countertopMaterial = document.getElementById('countertopMaterial');
+      const kitchenMaterial = document.getElementById('kitchenMaterial');
+      const totalCostElement = document.getElementById('totalCost');
+      const calculateCostButton = document.getElementById('calculateCost');
+
+      let selectedKitchenTypeCost = 0;
+      let selectedCountertopMaterialCost = 0;
+      let selectedKitchenMaterialCost = 0;
+
+      // Функция для обновления общей стоимости
+      function updateTotalCost() {
+        const totalCost = selectedKitchenTypeCost + selectedCountertopMaterialCost + selectedKitchenMaterialCost;
+        totalCostElement.textContent = totalCost;
+      }
+
+      // Обработчик клика на изображение типа кухни
+      kitchenType.addEventListener('click', (event) => {
+        if (event.target.tagName === 'IMG') {
+          // Сброс выделения предыдущего изображения
+          const previousSelectedImage = kitchenType.querySelector('.modal-select-image.selected');
+        if (previousSelectedImage) {
+          previousSelectedImage.classList.remove('selected');
+        }
+        // Выделение текущего изображения
+        event.target.parentElement.classList.add('selected');
+        selectedKitchenTypeCost = parseInt(event.target.parentElement.dataset.cost);
+        updateTotalCost();
+      }
+    });
+
+    // Обработчик клика на изображение материала столешницы
+    countertopMaterial.addEventListener('click', (event) => {
+      if (event.target.tagName === 'IMG') {
+        // Сброс выделения предыдущего изображения
+        const previousSelectedImage = countertopMaterial.querySelector('.modal-select-image.selected');
+        if (previousSelectedImage) {
+          previousSelectedImage.classList.remove('selected');
+        }
+        // Выделение текущего изображения
+        event.target.parentElement.classList.add('selected');
+        selectedCountertopMaterialCost = parseInt(event.target.parentElement.dataset.cost);
+        updateTotalCost();
+      }
+    });
+
+    // Обработчик клика на изображение материала кухни
+    kitchenMaterial.addEventListener('click', (event) => {
+      if (event.target.tagName === 'IMG') {
+        // Сброс выделения предыдущего изображения
+        const previousSelectedImage = kitchenMaterial.querySelector('.modal-select-image.selected');
+        if (previousSelectedImage) {
+          previousSelectedImage.classList.remove('selected');
+        }
+        // Выделение текущего изображения
+        event.target.parentElement.classList.add('selected');
+        selectedKitchenMaterialCost = parseInt(event.target.parentElement.dataset.cost);
+        updateTotalCost();
+      }
+    });
+
+    // Обработчик клика на кнопку "Рассчитать"
+    calculateCostButton.addEventListener('click', () => {
+      alert(totalCostElement.textContent)
+    });
+  });
+
+
 </script>
