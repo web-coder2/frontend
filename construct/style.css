@@ -105,7 +105,7 @@ body {
 
 	.header__btn {
 		background-color: #6161b5;
-		width: 200px;
+		width: 140px;
 		height: 40px;
 		color: white;
 		font-size: 17px;
@@ -185,4 +185,116 @@ body {
 	.upFooter__btn:hover {
 		background-color: #6263b6;
 		height: 30px;
+	}
+
+	.news {
+		display: flex;
+		height: 100px;
+		left: 0px;
+		top: 0px;
+		background: #171819;
+		align-items: center;
+	}
+
+	.news__title {
+		margin-left: 20%;
+		padding: 30px;
+		color: white;
+		font-family: sans-serif;
+		font-size: 20px;
+	}
+
+	.news__input {
+		height: 30px;
+		background-color: white;
+		padding-left: 10px;
+		font-family: sans-serif;
+		font-size: 18px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border-radius: 20px;
+	}
+
+	.news__btn {
+		background-color: #6e67f3;
+		height: 41px;
+		font-family: sans-serif;
+		font-size: 18px;
+		padding-left: 30px;
+		padding-right: 30px;
+		border: none;
+		color: white;
+		margin-left: 10px;
+		border-radius: 20px;
+	}
+
+	.footer {
+		display: flex !important;
+		background: #141A20;
+		align-items: center;
+	}
+
+	.footer__company {
+		width: 20%;
+		margin-left: 10%;
+	}
+
+	.company__title {
+		color: #d9d0d0;
+		font-size: 16px;
+		font-family: sans-serif;
+	}
+
+	.company__logo {
+		color: #d9a5a5;
+		font-size: 20px;
+		font-family: sans-serif;
+	}
+
+	.company__text {
+		color: #bdbdbd;
+		font-size: 14px;
+		font-family: sans-serif;
+	}
+
+	.footer__links {
+		display: block;
+		margin-left: 40px;
+		width: 10%;
+	}
+
+	.footer__link {
+		text-align: left;
+		color: #bdbdbd;
+		font-family: cursive;
+		font-size: 16px;
+		text-decoration: none;
+	}
+
+	.footer__contact {
+		width: 20%;
+		margin-left: 5%;
+	}
+
+	.contact__title {
+		font-size: 18px;
+		font-family: sans-serif;
+		color: #555555;
+	}
+
+	.contact__text {
+		font-size: 16px;
+		font-family: sans-serif;
+		color: #b5b5b5;
+	}
+
+	.copyright {
+		display: flex;
+		background: #171819;
+	}
+
+	.copyright p {
+		color: #b37575;
+		margin-left: 40%;
+		margin-top: 20px;
 	}
