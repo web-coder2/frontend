@@ -19,7 +19,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> 
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link text-light" href="#catalog">Каталог</a>
         <a class="nav-item nav-link text-light" href="#gallery">Галерея</a>
@@ -31,18 +31,18 @@
   <div class="container-fluid" style="background-image: url('media/mdf.jpg'); height: 70vh; background-size: cover; background-repeat: no-repeat;" id="catalog">
     <div class="justify-content-start align-items-center h-100" style="width: 200px !important;">
       <h1 class="text-light">company</h1>
-      <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing 
-      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+      <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris</p>
     </div>
   </div>
   <div class="container mt-5" id="gallery" style="height: 10%;">
     <div class="row">
-      <div class="col-md-8 offset-md-2 gallery-section"> 
+      <div class="col-md-8 offset-md-2 gallery-section">
         <div class="d-flex justify-content-center mb-3">
           <select id="carouselSelect" class="form-control bg-dark text-light">
             <option value="1">фотогалерея 1</option>
-            <option value="2">фотогалерея 2</option>
+                                    <option value="2">фотогалерея 2</option>
             <option value="3">фотогалерея 3</option>
             <option value="4">фотогалерея 4</option>
           </select>
@@ -67,9 +67,10 @@
         </div>
       </div>
 
-      <div class="col-md-12 mt-4"> 
+      <div class="col-md-12 mt-4">
         <div class="animated-block p-3 rounded">
           <button class="btn btn-success offset-md-5" data-toggle="modal" data-target="#costModal">Расчитать стоимость</button>
+          <button class="btn btn-primary offset-md-5 ml-2" data-toggle="modal" data-target="#allPhotosModal">Просмотреть все фото</button>
         </div>
       </div>
     </div>
@@ -95,8 +96,8 @@
 
   <footer id="contacts">
   <div class="container-fluid">
-    <div class="row footer-content">
-      <div class="col-md-3 footer-contact"> 
+        <div class="row footer-content">
+            <div class="col-md-3 footer-contact"> 
         <h3>Контакты мастера</h3>
         <p>Телефон: +7 (123) 456-78-90</p>
         <p>Email: info@example.com</p>
@@ -204,12 +205,55 @@
     </div>
   </div>
 
+  <!-- Модальное окно со всеми фото -->
+  <div class="modal fade" id="allPhotosModal" tabindex="-1" role="dialog" aria-labelledby="allPhotosModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="allPhotosModalLabel">Все фото</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body d-flex flex-wrap" id="allPhotosContainer">
+          <!-- Здесь будут отображаться фото -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="allPhotosModal" tabindex="-1" aria-labelledby="allPhotosModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="allPhotosModalLabel">Все Фото</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" id="allPhotosContainer">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="largeImageModal" tabindex="-1" aria-labelledby="largeImageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img id="largeImage" src="" class="img-fluid" alt="Большое изображение">
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 
 
 </html>
 
 <style>
+
     .modal-select-image {
       width: 100px;
       height: 100px;
@@ -286,7 +330,8 @@
   </style>
 
 <script>
-$(document).ready(function() {
+  
+  $(document).ready(function() {
       // Рендерим первую карусель при загрузке
       renderCarousel(1); // 1 - выбранное значение по умолчанию
 
@@ -385,7 +430,40 @@ $(document).ready(function() {
     calculateCostButton.addEventListener('click', () => {
       alert(totalCostElement.textContent)
     });
-  });
 
+});
+
+$(document).ready(function() {
+  $('#allPhotosModal').on('show.bs.modal', function(event) {
+    const allPhotosContainer = $('#allPhotosContainer');
+    allPhotosContainer.empty();
+
+    // Определяем количество колонок в зависимости от размера экрана
+    let columns;
+    if ($(window).width() < 768) { // Для мобильных устройств
+      columns = 2;
+    } else { // Для десктопа
+      columns = 4;
+    }
+
+    // Цикл по всем изображениям
+    for (let i = 1; i <= 8; i++) { // Измените 8 на общее количество изображений
+      const img = $('<img>')
+        .attr('src', 'gallery/' + i + '.jpg') // Измените путь к изображениям
+        .addClass('img-fluid')
+        .click(function() {
+          $('#largeImage').attr('src', $(this).attr('src'));
+          $('#largeImageModal').modal('show');
+        });
+
+      // Создаем div для изображения
+      const imgDiv = $('<div>')
+        .addClass('col-md-' + (12/columns) + ' mb-3') // Используем col-md- для Bootstrap
+        .append(img);
+
+      allPhotosContainer.append(imgDiv);
+    }
+  });
+});
 
 </script>
