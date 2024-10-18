@@ -29,11 +29,17 @@
     </div>
   </nav>
   <div class="container-fluid" style="background-image: url('media/mdf.jpg'); height: 70vh; background-size: cover; background-repeat: no-repeat;" id="catalog">
-    <div class="justify-content-start align-items-center h-100" style="width: 200px !important;">
+    <div class="justify-content-start align-items-center h-100" style="width: 50% !important;">
       <h1 class="text-light">company</h1>
-      <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris</p>
+      <p style="color: white; font-weight: 900; font-size: 12px;">Изготавливаем #Кухни:
+        • Сделаем замер, проект, встречи и общение – бесплатно
+        • Сроки изготовления Вашей кухни от 25 рабочих дней
+        • Все корпуса мы делаем из ЛДСП #Egger #Kronospan
+        • #Столешницы – только 38мм
+        • #Фасад рекомендуем – пластик, эмаль - не плёнку!!!
+        • #Ящики всегда – полное выдвижение – производитель обсуждается…
+        • Смонтируем всю электрику - розетки, выключатели, датчики, свет...
+        • Установим всю технику</p>
     </div>
   </div>
   <div class="container mt-5" id="gallery" style="height: 10%;">
@@ -42,7 +48,7 @@
         <div class="d-flex justify-content-center mb-3">
           <select id="carouselSelect" class="form-control bg-dark text-light">
             <option value="1">фотогалерея 1</option>
-                                    <option value="2">фотогалерея 2</option>
+            <option value="2">фотогалерея 2</option>
             <option value="3">фотогалерея 3</option>
             <option value="4">фотогалерея 4</option>
           </select>
@@ -105,13 +111,11 @@
         <h3>Контакты мастера</h3>
         <div class="footer-info">
           <p>Телефон: +7 920 702 0081</p>
-          <p>Email: info@example.com</p>
-          <p>Адрес: г. Курск, ул. Ленина, д. 1</p>
+          <p>Email: 89207020081@mail.ru</p>
         </div>
         <div class="footer-social"> 
-          <a href="#"><i class="fab fa-vk"></i></a> 
-          <a href="#"><i class="fab fa-odnoklassniki"></i></a> 
-          <a href="#"><i class="fab fa-telegram"></i></a> 
+          <a href="https://vk.com/d311649"><i class="fab fa-vk"></i></a> 
+          <a href="https://t.me/D89207020081"><i class="fab fa-telegram"></i></a> 
         </div>
       </div>
       <div class="col-md-6 col-sm-12"> 
@@ -119,7 +123,6 @@
         <div class="footer-info">
           <p>Телефон: +7 951 086 1427</p>
           <p>Email: yasher18@bk.ru</p>
-          <p>Адрес: г. Курск, ул. Ленина, д. 1</p>
         </div>
         <div class="footer-social">
           <a href="https://t.me/JSser1"><i class="fab fa-telegram"></i></a> 
@@ -178,7 +181,7 @@
             <div class="col-md-12 mb-3">
               <h4 class="d-flex justify-content-center">Выбрать материал кухни</h4>
               <div class="d-flex justify-content-center" id="kitchenMaterial">
-                <div class="modal-select-image" data-cost="1000">
+                                <div class="modal-select-image" data-cost="1000">
                   <img src="select/31.jpg" alt="Изображение 5">
                 </div>
                 <div class="modal-select-image" data-cost="1500">
@@ -190,6 +193,18 @@
                 <div class="modal-select-image" data-cost="2500">
                   <img src="select/34.jpg" alt="Изображение 8">
                 </div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+              <h4 class="d-flex justify-content-center">Ввести длину кухни</h4>
+              <div class="d-flex justify-content-center">
+                <input class="form-control" type="number" id="kitchenLength" placeholder="Введите длину в метрах">
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+              <h4 class="d-flex justify-content-center">Ввести ширину кухни</h4>
+              <div class="d-flex justify-content-center">
+                <input class="form-control" type="number" id="kitchenWidth" placeholder="Введите ширину в метрах">
               </div>
             </div>
           </div>
@@ -329,105 +344,132 @@
 <script>
   
   $(document).ready(function() {
-      // Рендерим первую карусель при загрузке
-      renderCarousel(1); // 1 - выбранное значение по умолчанию
+  // Рендерим первую карусель при загрузке
+  renderCarousel(1); // 1 - выбранное значение по умолчанию
 
-      $("#carouselSelect").change(function() {
-        var selectedValue = $(this).val();
-        renderCarousel(selectedValue);
-      });
+  $("#carouselSelect").change(function() {
+    var selectedValue = $(this).val();
+    renderCarousel(selectedValue);
+  });
 
-      function renderCarousel(value) {
-        var carouselInner = $(".carousel-inner");
-        carouselInner.empty(); // Очищаем существующие слайды
+  function renderCarousel(value) {
+    var carouselInner = $(".carousel-inner");
+    carouselInner.empty(); // Очищаем существующие слайды
 
-        var imagePrefix = value + "";
+    var imagePrefix = value + "";
 
-        // Генерируем слайды
-        for (var i = 1; i <= 3; i++) {
-          var imagePath = "media/" + imagePrefix + i + ".jpg";
-          var isActive = (i == 1) ? "active" : ""; // Первый слайд активный
+    // Генерируем слайды
+    for (var i = 1; i <= 3; i++) {
+      var imagePath = "media/" + imagePrefix + i + ".jpg";
+      var isActive = (i == 1) ? "active" : ""; // Первый слайд активный
 
-          var slideHTML = '<div class="carousel-item ' + isActive + '">' +
-            '<img src="' + imagePath + '" class="d-block w-100" alt="Slide ' + i + '">' +
-            '</div>';
+      var slideHTML = '<div class="carousel-item ' + isActive + '">' +
+        '<img src="' + imagePath + '" class="d-block w-100" alt="Slide ' + i + '">' +
+        '</div>';
 
-          carouselInner.append(slideHTML);
-        }
-      }
+      carouselInner.append(slideHTML);
+    }
+  }
 
-      // Инициализируем карусель (нужно сделать после добавления слайдов)
-      $('#carouselExampleIndicators').carousel();
-    });
+  // Инициализируем карусель (нужно сделать после добавления слайдов)
+  $('#carouselExampleIndicators').carousel();
+});
 
     
-    document.addEventListener('DOMContentLoaded', function() {
-      const kitchenType = document.getElementById('kitchenType');
-      const countertopMaterial = document.getElementById('countertopMaterial');
-      const kitchenMaterial = document.getElementById('kitchenMaterial');
-      const totalCostElement = document.getElementById('totalCost');
-      const calculateCostButton = document.getElementById('calculateCost');
+document.addEventListener('DOMContentLoaded', function() {
+  const kitchenType = document.getElementById('kitchenType');
+  const countertopMaterial = document.getElementById('countertopMaterial');
+  const kitchenMaterial = document.getElementById('kitchenMaterial');
+  const totalCostElement = document.getElementById('totalCost');
+  const calculateCostButton = document.getElementById('calculateCost');
 
-      let selectedKitchenTypeCost = 0;
-      let selectedCountertopMaterialCost = 0;
-      let selectedKitchenMaterialCost = 0;
+  let selectedKitchenTypeCost = 0;
+  let selectedCountertopMaterialCost = 0;
+  let selectedKitchenMaterialCost = 0;
 
-      // Функция для обновления общей стоимости
-      function updateTotalCost() {
-        const totalCost = selectedKitchenTypeCost + selectedCountertopMaterialCost + selectedKitchenMaterialCost;
-        totalCostElement.textContent = totalCost;
+  // Функция для обновления общей стоимости
+  function updateTotalCost() {
+    const totalCost = selectedKitchenTypeCost + selectedCountertopMaterialCost + selectedKitchenMaterialCost;
+    totalCostElement.textContent = totalCost;
+  }
+
+  // Обработчик клика на изображение типа кухни
+  kitchenType.addEventListener('click', (event) => {
+    if (event.target.tagName === 'IMG') {
+      // Сброс выделения предыдущего изображения
+      const previousSelectedImage = kitchenType.querySelector('.modal-select-image.selected');
+      if (previousSelectedImage) {
+        previousSelectedImage.classList.remove('selected');
       }
+      // Выделение текущего изображения
+      event.target.parentElement.classList.add('selected');
+      selectedKitchenTypeCost = parseInt(event.target.parentElement.dataset.cost);
+      updateTotalCost();
+    }
+  });
 
-      // Обработчик клика на изображение типа кухни
-      kitchenType.addEventListener('click', (event) => {
+  // Обработчик клика на изображение материала столешницы
+  countertopMaterial.addEventListener('click', (event) => {
         if (event.target.tagName === 'IMG') {
-          // Сброс выделения предыдущего изображения
-          const previousSelectedImage = kitchenType.querySelector('.modal-select-image.selected');
-        if (previousSelectedImage) {
-          previousSelectedImage.classList.remove('selected');
-        }
-        // Выделение текущего изображения
-        event.target.parentElement.classList.add('selected');
-        selectedKitchenTypeCost = parseInt(event.target.parentElement.dataset.cost);
-        updateTotalCost();
+      // Сброс выделения предыдущего изображения
+      const previousSelectedImage = countertopMaterial.querySelector('.modal-select-image.selected');
+      if (previousSelectedImage) {
+        previousSelectedImage.classList.remove('selected');
       }
-    });
+      // Выделение текущего изображения
+      event.target.parentElement.classList.add('selected');
+      selectedCountertopMaterialCost = parseInt(event.target.parentElement.dataset.cost);
+      updateTotalCost();
+    }
+  });
 
-    // Обработчик клика на изображение материала столешницы
-    countertopMaterial.addEventListener('click', (event) => {
-      if (event.target.tagName === 'IMG') {
-        // Сброс выделения предыдущего изображения
-        const previousSelectedImage = countertopMaterial.querySelector('.modal-select-image.selected');
-        if (previousSelectedImage) {
-          previousSelectedImage.classList.remove('selected');
-        }
-        // Выделение текущего изображения
-        event.target.parentElement.classList.add('selected');
-        selectedCountertopMaterialCost = parseInt(event.target.parentElement.dataset.cost);
-        updateTotalCost();
+  // Обработчик клика на изображение материала кухни
+  kitchenMaterial.addEventListener('click', (event) => {
+    if (event.target.tagName === 'IMG') {
+      // Сброс выделения предыдущего изображения
+      const previousSelectedImage = kitchenMaterial.querySelector('.modal-select-image.selected');
+      if (previousSelectedImage) {
+        previousSelectedImage.classList.remove('selected');
       }
-    });
+      // Выделение текущего изображения
+      event.target.parentElement.classList.add('selected');
+      selectedKitchenMaterialCost = parseInt(event.target.parentElement.dataset.cost);
+      updateTotalCost();
+    }
+  });
 
-    // Обработчик клика на изображение материала кухни
-    kitchenMaterial.addEventListener('click', (event) => {
-      if (event.target.tagName === 'IMG') {
-        // Сброс выделения предыдущего изображения
-        const previousSelectedImage = kitchenMaterial.querySelector('.modal-select-image.selected');
-        if (previousSelectedImage) {
-          previousSelectedImage.classList.remove('selected');
-        }
-        // Выделение текущего изображения
-        event.target.parentElement.classList.add('selected');
-        selectedKitchenMaterialCost = parseInt(event.target.parentElement.dataset.cost);
-        updateTotalCost();
-      }
-    });
+  // Обработчик клика на кнопку "Рассчитать"
+  calculateCostButton.addEventListener('click', () => {
+    calculateCost(); // Вызываем функцию расчета
+  });
+  
+  // Функция расчета стоимости
+  const calculateCost = () => {
+    const kitchenLength = parseFloat($('#kitchenLength').val());
+    const kitchenWidth = parseFloat($('#kitchenWidth').val());
+    
+    let baseCost = 50000 * (kitchenLength + kitchenWidth);
+    
+    // Определяем тип материала фасада и столешницы
+    const selectedKitchenTypeCost = parseInt($('#kitchenType .modal-select-image.selected').data('cost'));
+    const selectedCountertopMaterialCost = parseInt($('#countertopMaterial .modal-select-image.selected').data('cost'));
+    const selectedKitchenMaterialCost = parseInt($('#kitchenMaterial .modal-select-image.selected').data('cost'));
 
-    // Обработчик клика на кнопку "Рассчитать"
-    calculateCostButton.addEventListener('click', () => {
-      alert(totalCostElement.textContent)
-    });
-
+    // Наценка в зависимости от типа материала
+    let materialMarkup;
+    if (selectedKitchenTypeCost + selectedCountertopMaterialCost + selectedKitchenMaterialCost < 3000) {
+      materialMarkup = 0.1; // 10%
+    } else if (selectedKitchenTypeCost + selectedCountertopMaterialCost + selectedKitchenMaterialCost < 4500) {
+      materialMarkup = 0.15; // 15%
+    } else {
+      materialMarkup = 0.2; // 20%
+    }
+    
+    // Применяем наценку к базовой стоимости
+    const totalCost = baseCost + (baseCost * materialMarkup);
+    
+    $('#totalCost').text(totalCost.toFixed(2));
+  };
 });
 
 $(document).ready(function() {
@@ -461,6 +503,5 @@ $(document).ready(function() {
       allPhotosContainer.append(imgDiv);
     }
   });
-});
-
+}); 
 </script>
