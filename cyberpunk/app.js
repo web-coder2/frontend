@@ -101,3 +101,17 @@ console.log(`all_cash >>> ${all_cash}`)
 
 let joe = users.find(user => user.name === "Joe")
 console.log(joe)
+
+localStorage.setItem("users", JSON.stringify(users))
+localStorage.setItem("money", all_cash)
+
+console.log(localStorage.getItem("users"))
+console.log(JSON.parse(localStorage.getItem("users")))
+
+localStorage.removeItem("money")
+localStorage.setItem("cash", all_cash)
+
+window.onstorage = event => {
+    console.log(`Storage changed >>> ${event.key} : ${event.newValue} in time of ${new Date}`)
+}
+
