@@ -52,3 +52,52 @@ let domains_array = ['com', 'org', 'py']
 domains_array.forEach(dom => {
     console.log(google(dom))
 })
+
+
+async function getData () {
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/todos')
+        let data = await response.json()
+        console.log(data)
+    } catch(error) {
+        console.error('Error:', error)
+    }
+}
+
+let colorStatus = true
+
+let btner = document.getElementById("btner")
+btner.addEventListener("click", function() {
+    getData()
+    colorStatus =!colorStatus
+    if (colorStatus === true) {
+        btner.style.borderRadius = "10px"
+        btner.style.backgroundColor = "black"
+    } else {
+        btner.style.borderRadius = "20px"
+        btner.style.backgroundColor = "#454822"
+    }
+})
+
+let users = [{"name": "web-coder", "cash": 50000}, {"name": "Elliot", "cash": 30000}, {"name": "Biden", "cash": 15000}, {"name": "Joe", "cash": 34200}]
+
+users.forEach(user => {
+    console.log(`user >>> ${user.name} and money ${user.cash} $`)
+})
+
+let new_users = users.map(user => user.cash * 10 + 250)
+new_users.forEach(item => {
+    console.log(`new_user_money >>> ${item}`)
+})
+
+let rich_users = users.filter(item => item.cash  > 15000)
+console.log(rich_users)
+
+let startedCash = 25000
+let all_cash = users.reduce((all, item) => {
+    return all + item.cash;
+}, startedCash)
+console.log(`all_cash >>> ${all_cash}`)
+
+let joe = users.find(user => user.name === "Joe")
+console.log(joe)
